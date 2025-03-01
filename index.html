@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+              /* background-color: black; */
+            }
+            .sec-1 {
+              background-image: url(bg1[1].jpg);
+              background-size: cover;
+              min-height: 100vh;
+              /* background-color: black; */
+             /* opacity: 0.4; */
+              position:relative;
+            }
+
+            /* .sec-1bg{
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.251);
+                position: absolute;
+                top: 0;
+                left: 0;
+            } */
+            /* .cent-1{
+                position: relative;
+                z-index: 2;
+            } */
+            .first-head{
+                color: white;
+              font-size: 45px;
+              font-weight: 800;
+              text-shadow: 0 0 20px black ;
+            }
+            .line-1{
+              font-size: 13px;
+              color: white;
+              font-weight:0;
+              text-shadow: 0 0 20px black ;
+            }
+            .bttn-1{
+              /* width: 120px; */
+            }
+            .netlogo{
+              position: absolute;
+              top: 15px;
+              left: 15px;
+              width: 120px;
+            }
+            .txt{
+              font-size: 22px;
+              padding-left: 40px;
+            }
+            .top-rt1{
+              /* background: rgba(0, 0, 0, 0.29); */
+              color: white;
+            }
+            .top-rt{
+              position: absolute;
+              top: 15px;
+              right: 45px;
+            }
+            .drop-db{
+              color: white;
+            }
+
+            .sec-1::before{
+                contain: '';
+                position: absolute ;
+                width: 100%;
+                height: 100%;
+            }
+            .sec-1::after{
+              position: absolute;
+              bottom: 0px;
+              min-width: 100%;
+              height: 65px;
+              content: '';
+              background-color:black;
+              border-top: 10px solid red;
+              box-shadow: inset 0 20px 10px rgba(29, 29, 125, 0.906);
+              border-radius: 50% 50% 0 0;
+            }
+            .container-2{
+                  background-color: black;
+                  width:100%;
+                  /* min-height:300vh; */
+                  height: auto;
+                  /* margin: auto; */
+                  padding-left: 50px;
+                  padding-right: 70px;
+            }
+            .mainTD{
+              /* display:flex; */
+              overflow: scroll;
+              overflow-y: hidden;
+            }
+            .mov1{
+              padding-left: 40px;
+              border-radius: 5px;
+              position: relative;
+              /* transition: all 0.4s ease; */
+            }
+            .mov1::after{
+              position: absolute;
+              bottom: -40px;
+              left: 20px;
+              /* padding-left: 70px; */
+              font-size: 170px;
+              color: black;
+              -webkit-text-stroke: 3px white;
+              font-weight: 670;
+              transition: all 0.4s ease;
+              font-size: 125px;
+              width: 100%;
+              content: '1';
+            }
+            .mov2{
+              padding-left: 40px;
+              border-radius: 5px;
+              position: relative;
+            }
+            .mov2::after{
+              position: absolute;
+              bottom: -40px;
+              left: 20px;
+              /* padding-left: 70px; */
+              font-size: 170px;
+              color: black;
+              -webkit-text-stroke: 3px white;
+              transition: all 0.4s ease;
+              font-weight: 670;
+              font-size: 125px;
+              width: 100%;
+              content: '2';
+            }
+
+            .mov3{
+              padding-left: 40px;
+              border-radius: 5px;
+              position: relative;
+            }
+            .mov3::after{
+              position: absolute;
+              bottom: -40px;
+              left: 20px;
+              /* padding-left: 70px; */
+              font-size: 170px;
+              transition: all 0.4s ease;
+              color: black;
+              -webkit-text-stroke: 3px white;
+              font-weight: 670;
+              font-size: 125px;
+              width: 100%;
+              content: '3';
+            }
+
+            .mov4{
+              padding-left: 40px;
+              border-radius: 5px;
+              position: relative;
+            }
+            .mov4::after{
+              position: absolute;
+              bottom: -40px;
+              left: 20px;
+              transition: all 0.4s ease;
+              /* padding-left: 70px; */
+              font-size: 170px;
+              color: black;
+              -webkit-text-stroke: 3px white;
+              font-weight: 670;
+              font-size: 125px;
+              width: 100%;
+              content: '4';
+            }
+
+            .mov5{
+              padding-left: 40px;
+              border-radius: 5px;
+              position: relative;
+            }
+            .mov5::after{
+              position: absolute;
+              bottom: -40px;
+              left: 20px;
+              transition: all 0.4s ease;
+              /* padding-left: 70px; */
+              font-size: 170px;
+              color: black;
+              -webkit-text-stroke: 3px white;
+              font-weight: 670;
+              font-size: 125px;
+              width: 100%;
+              content: '5';
+            }
+
+            .mov6{
+              padding-left: 40px;
+              border-radius: 5px;
+              position: relative;
+            }
+            .mov6::after{
+              position: absolute;
+              bottom: -40px;
+              left: 20px;
+              transition: all 0.4s ease;
+              /* padding-left: 70px; */
+              font-size: 170px;
+              color: black;
+              -webkit-text-stroke: 3px white;
+              font-weight: 670;
+              font-size: 125px;
+              width: 100%;
+              content: '6';
+            }
+
+            .mov7{
+              padding-left: 40px;
+              border-radius: 5px;
+              position: relative;
+            }
+            .mov7::after{
+              position: absolute;
+              bottom: -40px;
+              left: 20px;
+              transition: all 0.4s ease;
+              /* padding-left: 70px; */
+              font-size: 170px;
+              color: black;
+              -webkit-text-stroke: 3px white;
+              font-weight: 670;
+              font-size: 125px;
+              width: 100%;
+              content: '7';
+            }
+
+            .mov8{
+              padding-left: 40px;
+              border-radius: 5px;
+              position: relative;
+            }
+            .mov8::after{
+              position: absolute;
+              bottom: -40px;
+              left: 20px;
+              transition: all 0.4s ease;
+              /* padding-left: 70px; */
+              font-size: 170px;
+              color: black;
+              -webkit-text-stroke: 3px white;
+              font-weight: 670;
+              font-size: 125px;
+              width: 100%;
+              content: '8';
+            }
+
+            .mov9{
+              padding-left: 40px;
+              border-radius: 5px;
+              position: relative;
+            }
+            .mov9::after{
+              position: absolute;
+              bottom: -40px;
+              left: 20px;
+              transition: all 0.4s ease;
+              /* padding-left: 70px; */
+              font-size: 170px;
+              color: black;
+              -webkit-text-stroke: 3px white;
+              font-weight: 670;
+              font-size: 125px;
+              width: 100%;
+              content: '9';
+            }
+
+            .mov10{
+              padding-left: 40px;
+              border-radius: 5px;
+              position: relative;
+            }
+            .mov10::after{
+              position: absolute;
+              bottom: -40px;
+              left: 20px;
+              transition: all 0.4s ease;
+              /* padding-left: 70px; */
+              font-size: 170px;
+              color: black;
+              -webkit-text-stroke: 3px white;
+              font-weight: 670;
+              font-size: 125px;
+              width: 100%;
+              content: '10';
+            }
+
+            .mov1:hover{
+                scale: 1.2;
+            } 
+            .mov2:hover{
+                scale: 1.2;
+            }
+            .mov3:hover{
+                scale: 1.2;
+            }
+            .mov4:hover{
+                scale: 1.2;
+            }
+            .mov5:hover{
+                scale: 1.2;
+            }
+            .mov6:hover{
+                scale: 1.2;
+            }
+            .mov7:hover{
+                scale: 1.2;
+            }
+            .mov8:hover{
+                scale: 1.2;
+            }
+            .mov9:hover{
+                scale: 1.2;
+            }
+            .mov10:hover{
+                scale: 1.2;
+            }
+            .img-rad{
+              border-radius: 5px;
+            }
+
+            .mainTD::-webkit-scrollbar {
+                  display: none;
+              }
+
+              .container-3{
+                  background-color: black;
+                  width:100%;
+                  min-height:100vh;
+                  /* height: auto; */
+            }
+            .card-1{
+              width: 580px;
+              height: 220px;
+              /* height: auto; */
+              background: #4b6cb7;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+              position: relative;
+              border-radius: 10px;
+            }
+            .cadp1{
+              position: absolute;
+              bottom: 5px;
+              right: 15px;
+            }
+            .cadh1{
+              padding-top:2px;
+            }
+            .cadp{
+              margin-left: 17px;
+            }
+
+            .main1{
+              font-size: 25px;
+              margin-left: 40px;
+              padding: 15px 20px;
+            }
+            .card-2{
+              width: 580px;
+              height: 220px;
+              /* height: auto; */
+              background: #4b6cb7;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+              position: relative;
+              border-radius: 10px;
+            }
+
+            .card-3{
+              width: 580px;
+              height: 220px;
+              /* height: auto; */
+              background: #4b6cb7;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+              position: relative;
+              border-radius: 10px;
+            }
+
+            .card-4{
+              width: 580px;
+              height: 220px;
+              /* height: auto; */
+              background: #4b6cb7;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+              position: relative;
+              border-radius: 10px;
+            }
+
+
+            .container-4{
+                  background-color: black;
+                  width:100%;
+                  /* min-height:70vh; */
+                  height: auto;
+                  margin-top: -110px;
+                  position: relative;
+            }
+            .faq1{
+              background-color: grey;
+              color: white;
+              font-size: 24px;
+            }
+            .faq{
+              background-color: grey;
+              color: white;
+              font-size: 20px;
+
+              /* width: 1200px; */
+            }
+            .mainhead{
+                font-size: 30px;
+                padding: 15px;
+                margin-left: 20px;
+            }
+            .accordion{
+                  width: 80%;
+                  font-size: 30px;
+                  /* padding: 5px; */
+            
+    }
+    .sec-5{
+                  background-color: black;
+                  width:100%;
+                  /* min-height:30vh; */
+                  height: auto;
+                  padding-top: 40px;
+                  padding-bottom: 40px;
+                  padding-left: 40px;
+            }
+
+            .bttn-2{
+                padding: px;
+                font-size: 25px;
+            }
+            .sec-6{
+                width: 100%;
+                /* min-height: 100vh; */
+                height: auto;
+                background-color: black;
+                padding: 8px;
+                padding-left: 40px;
+                color: white;
+            }
+            .foot1{
+                color: rgba(255, 255, 255, 0.664);
+            }
+            .top-rt12{
+              /* background: rgba(0, 0, 0, 0.29); */
+              color: white;
+            }
+            .bttn-3{
+                width: 200px;
+                text-align: start;
+            }
+            .foot-botm{
+                padding-top: 30px;
+                color: rgba(255, 255, 255, 0.664);
+            }
+            .call{
+                color: rgba(255, 255, 255, 0.664);
+            }
+
+            @media(max-width:1000px){
+                .cd-1{
+                    display: flex;
+                    flex-wrap: wrap;
+                    /* flex-direction: column; */
+                }
+                .cd-2{
+                    display: flex;
+                    flex-wrap: wrap;
+                    /* height: 2px; */
+
+                }
+                .card-1{
+                margin-bottom: 13px;
+                }
+                .card-3{
+                    margin-bottom: 13px;
+                }
+                .card-4{
+                    margin-bottom: 13px;
+                }
+                .container-3{
+                    height: 170vh;
+                }
+                .main-foot{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+                    align-items: start;
+                    /* flex-direction: column; */
+                }   
+            }
+            .form-control{
+                width: 315px;
+                background-color: transparent; 
+
+            }
+            .input-em{
+                color: white;
+            }
+            .sec-1btn{
+                font-size: 16px;
+                padding: 13px;
+                position: relative;
+                bottom: 7px;
+            }
+
+           
+    </style>
+  </head>
+  <body>
+    <!-- section1 -->
+        <div
+        class="container-fluid sec-1 d-flex justify-content-center align-items-center"
+      >
+        <div
+          class="cent-1 d-flex justify-content-center align-items-center flex-column"
+        >  <div class="sec-1bg"></div>
+          <h1 class="first-head">Unlimited movies,</h1>
+          <h1 class="first-head">TV shows and more</h1>
+          <p class="line-1">
+            Ready to watch? Enter your email to create or restart your membership.
+          </p>
+          <div class="form d-flex justify-content-center align-items-center gap-3">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput" class="input-em">Email address</label>
+              </div>
+              <button class="btn btn-danger sec-1btn">Get Started <i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="sec-1bg"></div> -->
+    <!-- section tp-left -->
+    <img src="Netflix_Logo_PMS[1].png" alt="" class="netlogo" />
+
+    <!-- section tp-right -->
+    <div class="d-flex top-rt gap-2">
+      <div class="top-rt1">
+        <div class="dropdown">
+          <button
+            class="btn btn-outline-light dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-language"></i> English
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">Hindi</a></li>
+            <li><a class="dropdown-item" href="#">Telugu</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="top-rt2">
+        <button class="btn btn-danger">Sign In</button>
+      </div>
+      <div></div>
+    </div>
+
+    <!-- section-2  -->
+    <div class="container-2 container-fluid">
+      <h1 class="text-light txt">Trending Now</h1>
+      <div class="mainTD d-flex">
+        <div class="mov1 mx-3 my-2">
+          <img src="1[1].webp" alt="" class="img-rad" />
+        </div>
+
+        <div class="mov2 mx-3 my-2">
+          <img src="2[1].webp" alt="" class="img-rad" />
+        </div>
+
+        <div class="mov3 mx-3 my-2">
+          <img src="3[1].webp" alt="" class="img-rad" />
+        </div>
+
+        <div class="mov4 mx-3 my-2">
+          <img src="4[1].webp" alt="" class="img-rad" />
+        </div>
+
+        <div class="mov5 mx-3 my-2">
+          <img src="5[1].webp" alt="" class="img-rad" />
+        </div>
+
+        <div class="mov6 mx-3 my-2">
+          <img src="6[1].webp" alt="" class="img-rad" />
+        </div>
+
+        <div class="mov7 mx-3 my-2">
+          <img src="7[1].webp" alt="" class="img-rad" />
+        </div>
+
+        <div class="mov8 mx-3 my-2">
+          <img src="8[1].webp" alt="" class="img-rad" />
+        </div>
+
+        <div class="mov9 mx-3 my-2">
+          <img src="9[1].webp" alt="" class="img-rad" />
+        </div>
+
+        <div class="mov10 mx-3 my-2">
+          <img src="10[1].webp" alt="" class="img-rad" />
+        </div>
+      </div>
+    </div>
+
+    <!-- section-3 -->
+    <div class="container-3  ">
+      <h1 class="text-light main1">More reasons to join</h1>
+      
+        <div class=" cd-1 d-flex justify-content-around align-items-center">
+          <div class="card-1">
+            <h5 class="text-light my-4 mx-3 cadh1">Enjoy on your TV</h5>
+            <p class="text-light cadp">
+              Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV,
+              Blu-ray players and more.
+            </p>
+
+            <img src="tv[1].png" alt="" width="100px" class="cadp1" />
+          </div>
+
+          <div class="card-2">
+            <h5 class="text-light my-4 mx-3 cadh1">
+              Download your shows to watch offline
+            </h5>
+            <p class="text-light cadp">
+              Save your favourites easily and always have something to watch.
+            </p>
+
+            <img src="downloadd[1].png" alt="" width="100px" class="cadp1" />
+          </div>
+        </div>
+        <div class=" cd-2 d-flex my-3 justify-content-around align-items-center">
+          <div class="card-3">
+            <h5 class="text-light my-4 mx-3 cadh1">Watch everywhereV</h5>
+            <p class="text-light cadp">
+              Stream unlimited movies and TV shows on your phone, tablet, laptop
+              and TV.
+            </p>
+
+            <img src="telescope[1].png" alt="" width="100px" class="cadp1" />
+          </div>
+
+          <div class="card-4">
+            <h5 class="text-light my-4 mx-3 cadh1">Create profiles for kids</h5>
+            <p class="text-light cadp">
+              Send kids on adventures with their favourite characters in a space
+              made just for them — free with your membership.
+            </p>
+
+            <img src="smiley[1].png" alt="" width="100px" class="cadp1" />
+          </div>
+        </div>
+    </div>
+
+    <!-- section-4  -->
+    <div class="container-4">
+      <h1 class="text-light mainhead">Frequently Asked Questions</h1>
+      <div class="cont1">
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed faq"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseOne"
+                >
+                  What is Netflix?
+                </button>
+              </h2>
+              <div
+                id="flush-collapseOne"
+                class="accordion-collapse collapse data"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body faq1">
+                  Netflix is a streaming service that offers a wide variety of
+                  award-winning TV shows, movies, anime, documentaries and more
+                  - on thousands of internet-connected devices. <br />
+
+                  You can watch as much as you want, whenever you want, without
+                  a single ad - all for one low monthly price. There's always
+                  something new to discover, and new TV shows and movies are
+                  added every week!.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center mt-3">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed faq"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseOne"
+                  >
+                    How much does Netflix cost?
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOne"
+                  class="accordion-collapse collapse data"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body faq1">
+                    Netflix is a streaming service that offers a wide variety of
+                    award-winning TV shows, movies, anime, documentaries and more
+                    - on thousands of internet-connected devices. <br />
+  
+                    You can watch as much as you want, whenever you want, without
+                    a single ad - all for one low monthly price. There's always
+                    something new to discover, and new TV shows and movies are
+                    added every week!.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center align-items-center mt-3">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed faq"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseOne"
+                  >
+                    Where can I watch?
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOne"
+                  class="accordion-collapse collapse data"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body faq1">
+                    Netflix is a streaming service that offers a wide variety of
+                    award-winning TV shows, movies, anime, documentaries and more
+                    - on thousands of internet-connected devices. <br />
+  
+                    You can watch as much as you want, whenever you want, without
+                    a single ad - all for one low monthly price. There's always
+                    something new to discover, and new TV shows and movies are
+                    added every week!.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="d-flex justify-content-center align-items-center mt-3">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed faq"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseOne"
+                  >
+                    How do I cancel?
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOne"
+                  class="accordion-collapse collapse data"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body faq1">
+                    Netflix is a streaming service that offers a wide variety of
+                    award-winning TV shows, movies, anime, documentaries and more
+                    - on thousands of internet-connected devices. <br />
+  
+                    You can watch as much as you want, whenever you want, without
+                    a single ad - all for one low monthly price. There's always
+                    something new to discover, and new TV shows and movies are
+                    added every week!.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center align-items-center mt-3">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed faq"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseOne"
+                  >
+                    What can I watch on Netflix?
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOne"
+                  class="accordion-collapse collapse data"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body faq1">
+                    Netflix is a streaming service that offers a wide variety of
+                    award-winning TV shows, movies, anime, documentaries and more
+                    - on thousands of internet-connected devices. <br />
+  
+                    You can watch as much as you want, whenever you want, without
+                    a single ad - all for one low monthly price. There's always
+                    something new to discover, and new TV shows and movies are
+                    added every week!.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center align-items-center mt-3">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed faq"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseOne"
+                  >
+                    Is Netflix good for kids?
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOne"
+                  class="accordion-collapse collapse data"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body faq1">
+                    Netflix is a streaming service that offers a wide variety of
+                    award-winning TV shows, movies, anime, documentaries and more
+                    - on thousands of internet-connected devices. <br />
+  
+                    You can watch as much as you want, whenever you want, without
+                    a single ad - all for one low monthly price. There's always
+                    something new to discover, and new TV shows and movies are
+                    added every week!.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- section-5 -->
+     <div class="sec-5">
+        <button class="btn btn-danger bttn-2">
+            Restart Your Membership <i class="fa-solid fa-chevron-right"></i>
+         </button>
+     </div>
+    
+     <!-- section-6  -->
+     <div class="sec-6">
+        <h4 class="call">Questions? Call <u> 000-800-919-1743</u></h4>
+       <div class="main-foot d-flex justify-content-around  align-items-center">
+        <div class="foot-left d-flex flex-column justify-content-center align-items-start">
+            <button class="btn btn-link foot1">FAQ</button>
+            <button class="btn btn-link foot1">Media Center</button>
+            <button class="btn btn-link foot1">Ways to Watch</button>
+            <button class="btn btn-link foot1">Cookies Preferences</button>
+            <button class="btn btn-link foot1">Speed Test</button>
+
+        </div>
+
+            <div class="foot-left d-flex flex-column justify-content-center align-items-start">
+                <button class="btn btn-link foot1">Help Center</button>
+                <button class="btn btn-link foot1">Investor Relations</button>
+                <button class="btn btn-link foot1">Terms of Use</button>
+                <button class="btn btn-link foot1">Corporate Information</button>
+                <button class="btn btn-link foot1">Legal Notices</button>
+            </div>
+
+            <div class="foot-left d-flex flex-column justify-content-center align-items-start">
+                <button class="btn btn-link foot1">Account</button>
+                <button class="btn btn-link foot1">Jobs</button>
+                <button class="btn btn-link foot1">Privacy</button>
+                <button class="btn btn-link foot1">Contact Us</button>
+                <button class="btn btn-link foot1">Only on Netflix</button>
+            </div>
+       </div>
+
+       <div class="top-rt12 my-5">
+        <div class="dropdown">
+          <button
+            class="btn btn-outline-light dropdown-toggle bttn-3"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-language"></i> English
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">Hindi</a></li>
+            <li><a class="dropdown-item" href="#">Telugu</a></li>
+          </ul>
+        </div>
+        <p class="foot-botm">Netflix India</p>
+      </div>
+      <!-- <p class="foot-botm">Netflix India</p> -->
+
+      </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
